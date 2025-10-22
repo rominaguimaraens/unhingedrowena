@@ -27,21 +27,31 @@ import Footer from "../components/Footer.astro";
   <body class="scanlines-toggle" data-on="false">
     <HeaderHUD />
     <main>
-      <Hero />
-      <Schedule />
-      <Clips />
-      <About />
-      <StickerWall />
-      <TipJar />
-      <PressKit />
-      <Guestbook />
+      <section data-wobble><Hero /></section>
+      <section data-wobble><Schedule /></section>
+      <section data-wobble><Clips /></section>
+      <section data-wobble><About /></section>
+      <section data-wobble><StickerWall /></section>
+      <section data-wobble><TipJar /></section>
+      <section data-wobble><PressKit /></section>
+      <section data-wobble><Guestbook /></section>
     </main>
     <Footer />
     <script is:inline>
       import setupComet from "/src/scripts/cometTrail.ts";
       import setupStarfield from "/src/scripts/starfield.ts";
       import { konami, voidPortal } from "/src/scripts/easterEggs.ts";
-      setupStarfield(); setupComet(); konami()(); voidPortal();
+      import wobble from "/src/scripts/wobble.ts";
+      import glitter from "/src/scripts/glitter.ts";
+
+      setupStarfield();
+      setupComet();        // site-wide comet trail
+      glitter();           // twinkly glitter OMG
+      konami()();          // secret BIOS page
+      voidPortal();
+
+      // tiny random rotate/skew on sections for messy vibes
+      requestAnimationFrame(()=> wobble("[data-wobble]"));
     </script>
   </body>
 </html>

@@ -1,16 +1,41 @@
 ﻿---
-import { onMount } from "astro/jsx-runtime";
+import { onMount } from ''astro/jsx-runtime'';
 ---
-<section style="padding: 40px 0;">
+<section id="stickers" style="padding: 40px 0;">
   <h2 style="padding: 0 20px;">Sticker Wall</h2>
-  <div id="sticker-wall" style="position:relative; height: 380px; margin-top: 8px; border-top:1px solid rgba(192,192,192,0.25);">
-    <!-- starter stickers -->
-    <img class="sticker" src="/public/icons/heart.svg" alt="heart" style="left:40px; top:40px; width:48px;" />
-    <img class="sticker" src="/public/icons/star.svg" alt="star" style="left:140px; top:90px; width:56px;" />
+  <div id="sticker-wall" style="position:relative; height: 420px; margin-top: 8px; border-top:1px solid rgba(192,192,192,0.25); overflow:hidden;">
+    <!-- starter stickers use /assets/... (public root) -->
+    <img class="sticker" src="/assets/stickers/pixel-heart.svg" alt="heart" style="left:40px; top:40px; width:54px;" />
+    <img class="sticker" src="/assets/stickers/sparkle.svg" alt="sparkle" style="left:140px; top:120px; width:64px;" />
+    <img class="sticker" src="/assets/stickers/glitter-blob.gif" alt="glitter" style="left:260px; top:70px; width:90px;" />
     <button id="reset-stickers" class="btn-jelly" style="position:absolute; right:20px; bottom:20px;">reset</button>
+
+    <!-- add-a-sticker buttons -->
+    <div style="position:absolute; left:20px; bottom:20px; display:flex; gap:8px;">
+      <button class="btn-jelly add-sticker" data-src="/assets/stickers/pixel-heart.svg">+ heart</button>
+      <button class="btn-jelly add-sticker" data-src="/assets/stickers/sparkle.svg">+ sparkle</button>
+      <button class="btn-jelly add-sticker" data-src="/assets/stickers/glitter-blob.gif">+ glitter</button>
+    </div>
   </div>
 </section>
+
 <script>
   import setupStickers from "../scripts/stickers";
-  setupStickers(document.getElementById("sticker-wall"));
+  const wall = document.getElementById("sticker-wall");
+  setupStickers(wall);
+
+  // spawn new stickers dynamically
+  wall.querySelectorAll(".add-sticker").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const img = document.createElement("img");
+      img.src = btn.getAttribute("data-src");
+      img.className = "sticker";
+      img.alt = "sticker";
+      img.style.left = (20 + Math.random()*200) + "px";
+      img.style.top  = (30 + Math.random()*140) + "px";
+      img.style.width = (48 + Math.random()*64) + "px";
+      wall.appendChild(img);
+      import("../scripts/stickers").then(m=>m.default(wall));
+    });
+  });
 </script>

@@ -1,13 +1,28 @@
 ﻿<section id="clips" style="padding: 40px 20px;">
   <h2>Clips & TikToks</h2>
-  <div style="columns: 280px; column-gap: 14px; margin-top:16px;">
-    {Array.from({length:8}).map((_,i)=>(
-      <a style={`display:block; break-inside: avoid; margin: 0 0 14px; transform: rotate(${Math.random()*6-3}deg);`}
-         class="glitchy"
-         href="https://www.tiktok.com/@unhinged.rowena"
-         target="_blank">
-        <div style="background:rgba(170,131,250,0.12); border:1px solid rgba(192,192,192,0.35); border-radius:12px; aspect-ratio: 16/9;"></div>
+  <div class="clips-masonry">
+    {Array.from({length:12}).map((_,i)=>(
+      <a class="clip-card" href="https://www.tiktok.com/@unhinged.rowena" target="_blank" aria-label={`clip ${i+1}`}>
+        <div class="thumb"></div>
       </a>
     ))}
   </div>
 </section>
+
+<style>
+  .clips-masonry { columns: 240px; column-gap: 16px; margin-top:16px; }
+  .clip-card { display:block; break-inside: avoid; margin: 0 0 16px; transform: rotate(var(--r, -1deg)); }
+  .clip-card .thumb {
+    background: linear-gradient(145deg, rgba(170,131,250,0.15), rgba(255,60,199,0.15));
+    border: 1px solid rgba(192,192,192,0.35); border-radius: 12px; aspect-ratio: 16/9;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+  .clip-card:hover { animation: jitter 120ms steps(2,end) 6; }
+</style>
+
+<script>
+  document.querySelectorAll(".clip-card").forEach((el)=>{
+    const r = (Math.random()*6 - 3).toFixed(2) + "deg";
+    el.style.setProperty("--r", r);
+  });
+</script>

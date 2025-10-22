@@ -1,0 +1,44 @@
+﻿@import "./variables.scss";
+
+@font-face { font-family: "Oxanium"; src: local("Oxanium"); font-display: swap; }
+@font-face { font-family: "Silkscreen"; src: local("Silkscreen"); font-display: swap; }
+@font-face { font-family: "Inter"; src: local("Inter"); font-display: swap; }
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: radial-gradient(1200px 800px at 70% -10%, #2b0f4a 0%, #1a0b2e 40%, #0f0a0f 100%);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a { color: var(--lilac); text-decoration: none; }
+a:hover { text-shadow: 0 0 10px var(--lilac); }
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.5px; }
+
+main { position: relative; z-index: 1; }
+
+.scanlines-toggle[data-on="true"]::before {
+  content: "";
+  position: fixed; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 3px;
+  pointer-events: none; z-index: 9999;
+}
+
+.btn-jelly {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 18px; border-radius: 999px; gap: 8px;
+  background: rgba(170,131,250,0.15);
+  border: 1px solid rgba(134,255,244,0.35);
+  backdrop-filter: blur(6px) saturate(140%);
+  box-shadow: 0 10px 30px rgba(110,59,206,0.35), inset 0 0 30px rgba(255,58,199,0.25);
+  font-weight: 700; letter-spacing: .4px;
+  transition: transform .08s ease, box-shadow .2s ease;
+}
+.btn-jelly:active { transform: translateY(1px) scale(0.99); }

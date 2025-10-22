@@ -1,0 +1,11 @@
+﻿<section id="guestbook" style="padding: 40px 20px;">
+  <h2>Guestbook</h2>
+  <form name="guestbook" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="guestbook" />
+    <p><input class="pill" type="text" name="name" placeholder="name" required></p>
+    <p><input class="pill" type="email" name="email" placeholder="email (not shown)"></p>
+    <p><textarea class="pill" name="message" placeholder="say hi" required rows="4" style="width:100%"></textarea></p>
+    <button class="btn-jelly" type="submit">sign</button>
+  </form>
+  <p style="color:var(--muted);margin-top:10px;">entries appear after moderation ✨</p>
+</section>

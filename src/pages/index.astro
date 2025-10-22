@@ -1,0 +1,47 @@
+﻿---
+import "../styles/globals.scss";
+import "../styles/effects.scss";
+import setupComet from "../scripts/cometTrail";
+import setupStarfield from "../scripts/starfield";
+import { konami, voidPortal } from "../scripts/easterEggs";
+
+import HeaderHUD from "../components/HeaderHUD.astro";
+import Hero from "../components/Hero.astro";
+import Schedule from "../components/Schedule.astro";
+import Clips from "../components/Clips.astro";
+import About from "../components/About.astro";
+import StickerWall from "../components/StickerWall.astro";
+import TipJar from "../components/TipJar.astro";
+import PressKit from "../components/PressKit.astro";
+import Guestbook from "../components/Guestbook.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>unhingedrowena — live(ish)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body class="scanlines-toggle" data-on="false">
+    <HeaderHUD />
+    <main>
+      <Hero />
+      <Schedule />
+      <Clips />
+      <About />
+      <StickerWall />
+      <TipJar />
+      <PressKit />
+      <Guestbook />
+    </main>
+    <Footer />
+    <script is:inline>
+      import setupComet from "/src/scripts/cometTrail.ts";
+      import setupStarfield from "/src/scripts/starfield.ts";
+      import { konami, voidPortal } from "/src/scripts/easterEggs.ts";
+      setupStarfield(); setupComet(); konami()(); voidPortal();
+    </script>
+  </body>
+</html>

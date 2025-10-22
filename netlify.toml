@@ -1,0 +1,8 @@
+﻿[build]
+  command = "astro build"
+  publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+  X-Frame-Options = "SAMEORIGIN"

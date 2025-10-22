@@ -1,0 +1,16 @@
+﻿---
+import { onMount } from "astro/jsx-runtime";
+---
+<section style="padding: 40px 0;">
+  <h2 style="padding: 0 20px;">Sticker Wall</h2>
+  <div id="sticker-wall" style="position:relative; height: 380px; margin-top: 8px; border-top:1px solid rgba(192,192,192,0.25);">
+    <!-- starter stickers -->
+    <img class="sticker" src="/public/icons/heart.svg" alt="heart" style="left:40px; top:40px; width:48px;" />
+    <img class="sticker" src="/public/icons/star.svg" alt="star" style="left:140px; top:90px; width:56px;" />
+    <button id="reset-stickers" class="btn-jelly" style="position:absolute; right:20px; bottom:20px;">reset</button>
+  </div>
+</section>
+<script>
+  import setupStickers from "../scripts/stickers";
+  setupStickers(document.getElementById("sticker-wall"));
+</script>

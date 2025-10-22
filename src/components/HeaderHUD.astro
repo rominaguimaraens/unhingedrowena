@@ -1,0 +1,35 @@
+﻿---
+const links = [
+  { href: "#home", label: "Home" },
+  { href: "#schedule", label: "Schedule" },
+  { href: "#clips", label: "Clips" },
+  { href: "#about", label: "About" },
+  { href: "#tip", label: "Tip" },
+  { href: "#press", label: "Press" },
+  { href: "#guestbook", label: "Guestbook" },
+];
+---
+<link rel="stylesheet" href="/src/styles/hud.scss">
+<div class="hud-wrap">
+  <div class="hud">
+    <div class="orb" title="LIVE status"></div>
+    <nav class="nav">
+      {links.map(l => <a class="pill glitchy" href={l.href}>{l.label}</a>)}
+    </nav>
+    <div class="social">
+      <a class="pill" href="https://twitch.tv/unhingedrowena" target="_blank">Twitch</a>
+      <a class="pill" href="https://www.tiktok.com/@unhinged.rowena" target="_blank">TikTok</a>
+    </div>
+    <svg class="halo" viewBox="0 0 600 200" aria-hidden="true">
+      <path d="M20,120 Q300,-40 580,120" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+      <defs>
+        <linearGradient id="g" x1="0" x2="1">
+          <stop offset="0%" stop-color="#86FFF4"/><stop offset="50%" stop-color="#AA83FA"/><stop offset="100%" stop-color="#FF3CC7"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+</div>
+<div class="marquee" aria-label="updates">
+  <span> live now? maybe. clips below • english streams • throw shiny coins into the void ✨ • unhinged. rowena. live(ish). • </span>
+</div>

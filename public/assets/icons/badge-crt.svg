@@ -1,0 +1,15 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="crt" x1="0" x2="1">
+      <stop offset="0%" stop-color="#86fff4"/>
+      <stop offset="50%" stop-color="#ff3cc7"/>
+      <stop offset="100%" stop-color="#aa83fa"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="20" width="104" height="80" rx="14" ry="14" fill="#0f0a0f" stroke="url(#crt)" stroke-width="4"/>
+  <rect x="18" y="30" width="84" height="60" rx="10" fill="#1a0b2e" stroke="#86fff4" stroke-width="2"/>
+  <text x="60" y="66" font-family="'Silkscreen', monospace" font-size="18" fill="#86fff4" text-anchor="middle">CRT</text>
+  <circle cx="52" cy="90" r="3" fill="#ff3cc7"/>
+  <circle cx="60" cy="90" r="3" fill="#86fff4"/>
+  <circle cx="68" cy="90" r="3" fill="#ff6ad5"/>
+</svg>

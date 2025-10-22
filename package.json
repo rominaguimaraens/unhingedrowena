@@ -1,0 +1,27 @@
+{
+  "name": "unhingedrowena",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "lint": "eslint .",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "latest",
+    "canvas-confetti": "^1.9.3",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "@types/node": "latest",
+    "eslint": "latest",
+    "eslint-plugin-astro": "latest",
+    "prettier": "latest",
+    "prettier-plugin-astro": "latest",
+    "sass": "latest",
+    "typescript": "latest"
+  }
+}

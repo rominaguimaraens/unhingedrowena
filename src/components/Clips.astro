@@ -1,0 +1,13 @@
+﻿<section id="clips" style="padding: 40px 20px;">
+  <h2>Clips & TikToks</h2>
+  <div style="columns: 280px; column-gap: 14px; margin-top:16px;">
+    {Array.from({length:8}).map((_,i)=>(
+      <a style={`display:block; break-inside: avoid; margin: 0 0 14px; transform: rotate(${Math.random()*6-3}deg);`}
+         class="glitchy"
+         href="https://www.tiktok.com/@unhinged.rowena"
+         target="_blank">
+        <div style="background:rgba(170,131,250,0.12); border:1px solid rgba(192,192,192,0.35); border-radius:12px; aspect-ratio: 16/9;"></div>
+      </a>
+    ))}
+  </div>
+</section>
